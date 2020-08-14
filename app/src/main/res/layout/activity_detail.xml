@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraintS">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/headerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/reports_header_bk"
+                android:paddingLeft="20dp"
+                android:paddingTop="30dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="20dp">
+
+                <TextView
+                    android:id="@+id/dateTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Daily Updates"
+                    android:textColor="#607D8B"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/tvCountry"
+                    style="@style/reportContentText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="70dp"
+                    android:text="country"
+                    android:textColor="@color/whiteTextColor" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/cardLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/headerLayout"
+                android:layout_marginTop="-80dp">
+
+                <androidx.cardview.widget.CardView
+                    style="@style/reportsCardStyleDetailActivity"
+                    app:cardBackgroundColor="@color/whiteTextColor"
+                    app:cardCornerRadius="16dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/reportContentText"
+                            android:layout_gravity="center"
+                            android:text="Total Cases"
+                            android:textColor="#79D0A3"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/tvCases"
+                            style="@style/viewParent.headerText"
+                            android:layout_gravity="center"
+                            android:text="0"
+                            android:textSize="27sp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/reportsCardStyleDetailActivity"
+                    app:cardBackgroundColor="@color/whiteTextColor"
+                    app:cardCornerRadius="16dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/reportContentText"
+                            android:layout_gravity="center"
+                            android:text="Today Cases"
+                            android:textColor="#79D0A3"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/tvTodayCases"
+                            style="@style/viewParent.headerText"
+                            android:layout_gravity="center"
+                            android:text="0"
+                            android:textSize="27sp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardLayout">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardViewGraph"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.razerdp.widget.animatedpieview.AnimatedPieView
+                                android:id="@+id/animatedPieView"
+                                android:layout_width="350dp"
+                                android:layout_height="250dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="0dp"
+                                android:padding="6dp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="10dp">
+
+                                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="17dp"
+                                    android:layout_height="17dp"
+                                    android:layout_gravity="center"
+                                    android:src="#03A9F4" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:paddingLeft="5dp"
+                                    android:text="Active Cases"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:layout_gravity="center"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="17dp"
+                                    android:layout_height="17dp"
+                                    android:layout_gravity="center"
+                                    android:src="#4CAF50" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:paddingLeft="5dp"
+                                    android:text="Recovered"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:layout_gravity="center"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="17dp"
+                                    android:layout_height="17dp"
+                                    android:layout_gravity="center"
+                                    android:src="#FF5252" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:paddingLeft="5dp"
+                                    android:text="Deaths"
+                                    android:layout_gravity="center"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_above="@+id/btnTrack"
+                        android:layout_below="@+id/cardViewGraph"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="60dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.leo.simplearcloader.SimpleArcLoader
+                                android:id="@+id/arcLoader"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_centerInParent="true"
+                                android:visibility="visible"
+                                app:arc_style="simple_arc"></com.leo.simplearcloader.SimpleArcLoader>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp"
+                                    android:padding="5dp"
+                                    app:cardCornerRadius="10dp">
+
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:padding="5dp"
+                                        android:text="Country Stats"
+                                        android:textAllCaps="true"
+                                        android:textColor="#E73C68"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold" />
+
+                                </androidx.cardview.widget.CardView>
+
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="25dp"
+                                    android:layout_marginBottom="10dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="sans-serif-light"
+                                        android:text="Recovored"
+                                        android:textColor="#000000"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tvRecovered"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:fontFamily="sans-serif-light"
+                                        android:text="0"
+                                        android:textAlignment="textEnd"
+                                        android:textColor="#6600cc"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="25dp"
+                                    android:layout_marginBottom="10dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="sans-serif-light"
+                                        android:text="Critical"
+                                        android:textColor="#000000"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tvCritical"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:fontFamily="sans-serif-light"
+                                        android:text="0"
+
+                                        android:textAlignment="textEnd"
+                                        android:textColor="#6600cc"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="25dp"
+                                    android:layout_marginBottom="10dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="sans-serif-light"
+                                        android:text="Active"
+                                        android:textColor="#000000"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tvActive"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:fontFamily="sans-serif-light"
+                                        android:text="0"
+
+                                        android:textAlignment="textEnd"
+                                        android:textColor="#6600cc"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="25dp"
+                                    android:layout_marginBottom="10dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="sans-serif-light"
+                                        android:text="Total Deaths"
+                                        android:textColor="#000000"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tvTotalDeaths"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:fontFamily="sans-serif-light"
+                                        android:text="0"
+
+                                        android:textAlignment="textEnd"
+                                        android:textColor="#6600cc"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="25dp"
+                                    android:layout_marginBottom="10dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="sans-serif-light"
+                                        android:text="Today Deaths"
+                                        android:textColor="#000000"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tvTodayDeaths"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:fontFamily="sans-serif-light"
+                                        android:text="0"
+
+                                        android:textAlignment="textEnd"
+                                        android:textColor="#6600cc"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="25dp"
+                                    android:layout_marginBottom="10dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="sans-serif-light"
+                                        android:text="Affected Countries"
+                                        android:textColor="#000000"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tvAffectedCountries"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:fontFamily="sans-serif-light"
+                                        android:text="0"
+                                        android:textAlignment="textEnd"
+                                        android:textColor="#6600cc"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/banner_container"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

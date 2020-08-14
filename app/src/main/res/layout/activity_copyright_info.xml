@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".CopyrightInfo">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/profilePrimaryDark"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleTextAppearance="@style/TransparentText">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:id="@+id/linearLayout"
+                android:background="@drawable/profile_bk">
+
+                <ImageView
+                    android:layout_marginTop="5dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/application_logo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Daily Updates"
+                    android:textSize="28dp"
+                    android:textStyle="bold"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/profileBackground">
+
+                    <View
+                        android:layout_alignParentTop="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:background="@drawable/profile_bk"/>
+
+                    <TextView
+                        android:id="@+id/tv_back_to_home"
+                        android:clickable="true"
+                        android:text="Back to\nHome"
+                        style="@style/profileStyledBackButton" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!--<include layout="@layout/layout_copyright_info" />-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/headerText"
+                android:layout_marginBottom="20dp"
+                android:text="Statistic Copyright" />
+
+            <RelativeLayout
+                android:id="@+id/ralative_india_data"
+                style="@style/profileDetailsLayout">
+
+                <ImageView
+                    android:id="@+id/nameImageView"
+                    style="@style/profileDetailsImage"
+                    android:src="@drawable/ic_address" />
+
+                <TextView
+                    android:id="@+id/nameTextView"
+                    style="@style/profileDetailsTextMain"
+                    android:layout_toRightOf="@id/nameImageView"
+                    android:text="India Data by:" />
+
+                <TextView
+                    style="@style/profileDetailsMiniText"
+                    android:layout_toRightOf="@id/nameImageView"
+                    android:text="https://api.covid19india.org/" />
+
+            </RelativeLayout>
+
+            <View style="@style/proifleDetailsView" />
+
+            <RelativeLayout
+                android:id="@+id/ralative_global_data"
+                style="@style/profileDetailsLayout">
+
+                <ImageView
+                    android:id="@+id/mobileImageView"
+                    style="@style/profileDetailsImage"
+                    android:src="@drawable/ic_mobile" />
+
+                <TextView
+                    style="@style/profileDetailsTextMain"
+                    android:layout_toRightOf="@id/mobileImageView"
+                    android:text="Global Data by:" />
+
+                <TextView
+                    style="@style/profileDetailsMiniText"
+                    android:layout_toRightOf="@id/mobileImageView"
+                    android:text="https://corona.lmao.ninja/" />
+
+            </RelativeLayout>
+
+            <View style="@style/proifleDetailsView" />
+
+            <RelativeLayout
+                android:id="@+id/ralative_privacy_policy"
+                style="@style/profileDetailsLayout">
+
+                <ImageView
+                    android:id="@+id/emailImageView"
+                    style="@style/profileDetailsImage"
+                    android:src="@drawable/ic_policy" />
+
+                <TextView
+                    style="@style/profileDetailsTextMain"
+                    android:layout_toRightOf="@id/emailImageView"
+                    android:text="Privacy Policy:" />
+
+                <TextView
+                    style="@style/profileDetailsMiniText"
+                    android:layout_toRightOf="@id/emailImageView"
+                    android:text="https://bit.ly/2XaQ1LS" />
+
+            </RelativeLayout>
+
+            <View style="@style/proifleDetailsView" />
+
+            <RelativeLayout
+                android:id="@+id/ralative_copyright_agreement"
+                style="@style/profileDetailsLayout">
+
+                <ImageView
+                    android:id="@+id/addressImageView"
+                    style="@style/profileDetailsImage"
+                    android:src="@drawable/ic_permission_agreement" />
+
+                <TextView
+                    style="@style/profileDetailsTextMain"
+                    android:layout_toRightOf="@id/addressImageView"
+                    android:text="Copyright Permission" />
+
+                <TextView
+                    style="@style/profileDetailsMiniText"
+                    android:layout_toRightOf="@id/addressImageView"
+                    android:text="https://bit.ly/3bPCNJU" />
+
+            </RelativeLayout>
+
+            <View style="@style/proifleDetailsView" />
+
+            <RelativeLayout
+                style="@style/profileDetailsLayout"
+                android:layout_marginBottom="10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:gravity="center"
+                    style="@style/profileDetailsTextMain"
+                    android:hint="© 2020 Powerful Gaming.\nAll rights Reserved" />
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

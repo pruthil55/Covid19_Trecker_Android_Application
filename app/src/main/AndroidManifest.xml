@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="covid.info.tracker">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+
+    <!--android:hardwareAccelerated="true" added for InMobi-->
+
+    <application
+        android:usesCleartextTraffic="true"
+        android:hardwareAccelerated="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/application_logo_round"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/application_logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="covid.info.tracker.CopyrightInfo"></activity>
+        <activity android:name="covid.info.tracker.IndiaCorona" />
+        <activity
+            android:name="covid.info.tracker.SplashLogo"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="covid.info.tracker.MainActivity" />
+        <activity android:name="covid.info.tracker.AffectedCountries" />
+        <activity android:name="covid.info.tracker.DetailActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6355413549810381~4851093854" />
+
+        <activity android:name=".LoadActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppThemeWeb">
+        </activity>
+
+        <receiver android:name="com.appsflyer.SingleInstallBroadcastReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+
+    </application>
+
+</manifest>
